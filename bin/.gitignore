@@ -5,3 +5,6 @@
 /DeveloperBonusCalculator.class
 /ManagerBonusCalculator.class
 /FilePersistence.class
+/Eatable.class
+/Sleepable.class
+/Attendable.class

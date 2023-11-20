@@ -37,10 +37,10 @@ public class main {
         fileManager.saveToFile(displayer.displayEmployeeInfo(employee));
 
 
-        // Violation of Interface Segregation Principle (ISP)
+        // Violation of Interface Segregation Principle (ISP) - resolved
         Developer dev = new Developer("Andrew", 3000);
         Manager mng = new Manager("Maria", 3450);
         dev.eat(); 
-        mng.sleep(); //Dev doesn't need a sleep method but implements Workable which includes sleep()
+        mng.sleep(); 
     }
 }
