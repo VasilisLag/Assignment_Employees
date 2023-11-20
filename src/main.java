@@ -22,7 +22,7 @@ public class main {
         System.out.println("Bonus for John Doe (Manager): $" + managerEmployeeType.calculateBonus(employee));
         System.out.println("Bonus for John Doe (Developer): $" + developerEmployeeType.calculateBonus(employee));
 
-        // Violation of Liskov Substitution Principle (LSP)
+        // Violation of Liskov Substitution Principle (LSP) - resolved
         TemporaryEmployee temporaryEmployee = new TemporaryEmployee("Jane Roe", 30000);
         System.out.println("Bonus for Temporary Employee: $" + temporaryEmployee.calculateBonus());
 

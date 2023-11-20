@@ -1,12 +1,11 @@
-// Violation of Liskov Substitution Principle (LSP)
 public class TemporaryEmployee extends Employee {
 	
     public TemporaryEmployee(String name, double salary) {
 		super(name, salary);
 	}
 
-	// Violation: Temporary employees cannot have a bonus, breaking the expected behavior of the base class.
+	@Override
     public double calculateBonus() {
-        return 0;
+        return 1000;
     }
 }
