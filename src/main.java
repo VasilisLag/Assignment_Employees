@@ -1,8 +1,11 @@
 public class main {
     public static void main(String[] args) {
-        // Violation of Single Responsibility Principle (SRP)
+        // Violation of Single Responsibility Principle (SRP) - resolved
+    	EmployeeDisplayer displayer = new EmployeeDisplayer();
+    	EmployeeSaver saver = new EmployeeSaver();
+    	
         Employee employee = new Employee("John Doe", 50000);
-        EmployeeManager employeeManager = new EmployeeManager();
+        EmployeeManager employeeManager = new EmployeeManager(displayer, saver);
         employeeManager.processEmployee(employee);
 
         // Violation of Open-Closed Principle (OCP)
