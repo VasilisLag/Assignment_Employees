@@ -1,13 +1,13 @@
-// Violation of Dependency Inversion Principle (DIP)
+// High-level module with file management operations
 public class FileManager {
-    // Violation: This class depends on a low-level module (FileWriter) instead of an abstraction.
-    private FileWriters fileWriter;
+    private FilePersistence filePersistence;
 
-    public FileManager() {
-        this.fileWriter = new FileWriters();
+    // Inject FilePersistence through constructor (dependency injection)
+    public FileManager(FilePersistence filePersistence) {
+        this.filePersistence = filePersistence;
     }
 
     public void saveToFile(String data) {
-        fileWriter.write(data);
+        filePersistence.writeToFile(data);
     }
 }

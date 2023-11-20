@@ -1,9 +1,10 @@
 import java.io.FileWriter;
 import java.io.IOException;  
 
-public class FileWriters {
+public class FileWriters implements FilePersistence{
     // File writing logic
-    public void write(String data) {
+	@Override
+    public void writeToFile(String data) {
         // Write to a file
     	try {
   	      FileWriter myWriter = new FileWriter("details.txt");

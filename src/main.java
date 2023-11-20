@@ -26,10 +26,16 @@ public class main {
         TemporaryEmployee temporaryEmployee = new TemporaryEmployee("Jane Roe", 30000);
         System.out.println("Bonus for Temporary Employee: $" + temporaryEmployee.calculateBonus());
 
-        // Violation of Dependency Inversion Principle (DIP)
-        FileManager fileManager = new FileManager();
-        fileManager.saveToFile("Bonus for John Doe (Manager): $" + managerEmployeeType.calculateBonus(employee));
-        fileManager.saveToFile("Bonus for John Doe (Developer): $" + developerEmployeeType.calculateBonus(employee));
+        // Violation of Dependency Inversion Principle (DIP) - resolved
+        // Instantiate the concrete implementation of FilePersistence
+        FilePersistence filePersistence = new FileWriters();
+
+        // Instantiate FileManager with the injected dependency
+        FileManager fileManager = new FileManager(filePersistence);
+
+        // Use FileManager to save data to a file
+        fileManager.saveToFile(displayer.displayEmployeeInfo(employee));
+
 
         // Violation of Interface Segregation Principle (ISP)
         Developer dev = new Developer("Andrew", 3000);
